@@ -5,7 +5,7 @@ import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
+//@Entity
 @Data
 @NoArgsConstructor
 @DiscriminatorValue("Admin")

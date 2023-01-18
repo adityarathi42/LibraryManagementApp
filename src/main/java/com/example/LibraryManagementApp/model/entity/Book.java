@@ -15,8 +15,8 @@ import java.util.List;
 @Table(name = "book", schema = "lms")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer bookId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long bookId;
 
     private String bookName;
 

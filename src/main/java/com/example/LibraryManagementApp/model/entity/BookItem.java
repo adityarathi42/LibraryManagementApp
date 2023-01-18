@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "book_item", schema = "lms")
 public class BookItem {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer itemId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long itemId;
 
     @ManyToOne
     @JoinColumn(name="book_id", nullable = false)
