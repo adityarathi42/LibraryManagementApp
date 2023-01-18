@@ -1,5 +1,6 @@
 package com.example.LibraryManagementApp.model.entity;
 
+import com.example.LibraryManagementApp.enums.UserType;
 import com.example.LibraryManagementApp.model.entity.LibraryUser;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
@@ -13,7 +14,7 @@ import java.util.Date;
 @Entity
 @Table(name = "member", schema = "lms")
 @Data
-@DiscriminatorValue("Member")
+@DiscriminatorValue(UserType.MEMBER)
 public class Member extends LibraryUser {
     @Column(name = "issue_count", columnDefinition = "integer default 0")
     private int issueCount;

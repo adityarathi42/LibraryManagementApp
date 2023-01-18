@@ -19,8 +19,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     LibraryUserRepository libraryUserRepository;
 
-    @Autowired
-    MemberRepository memberRepository;
     @Override
     public void create(LibraryUserDTO libraryUserDTO) {
         if (libraryUserDTO.getIsAdmin()) {

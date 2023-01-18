@@ -21,7 +21,7 @@ public class LibraryUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private Integer id;
 
     @Column(name = "email", nullable = false)
     private String email;
@@ -34,6 +34,10 @@ public class LibraryUser {
 
     @Column(name = "phone")
     private String phoneNumber;
+
+    @Column(name="user_type", insertable = false, updatable = false)
+    protected String userType;
+
 
     public LibraryUser getLibraryUserFromDTO(LibraryUserDTO libraryUserDTO) {
         this.email = libraryUserDTO.getEmail();

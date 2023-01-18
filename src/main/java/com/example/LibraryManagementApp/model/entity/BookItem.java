@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 public class BookItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long itemId;
+    Integer itemId;
 
-    @ManyToOne
-    @JoinColumn(name="book_id", nullable = false)
-    Book book;
+//    @ManyToOne
+////    @JoinColumn(name="book_id", nullable = false)
+//    Book book;
 
     @Column(unique = true)
     String barcode;

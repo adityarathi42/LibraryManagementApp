@@ -1,5 +1,6 @@
 package com.example.LibraryManagementApp.controller;
 
+import com.example.LibraryManagementApp.enums.UserType;
 import com.example.LibraryManagementApp.model.dto.LibraryUserDTO;
 import com.example.LibraryManagementApp.model.entity.LibraryUser;
 import com.example.LibraryManagementApp.service.UserService;
@@ -18,7 +19,6 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     public void create(@RequestBody LibraryUserDTO libraryUserDTO) {
-
         userService.create(libraryUserDTO);
     }
 }
