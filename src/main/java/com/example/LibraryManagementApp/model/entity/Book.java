@@ -28,8 +28,7 @@ public class Book {
 
     private String author;
 
-    @OneToMany(targetEntity = BookItem.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "book_id", referencedColumnName = "book_id")
+    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL, orphanRemoval = true)
     private List<BookItem> bookItemList;
 
 

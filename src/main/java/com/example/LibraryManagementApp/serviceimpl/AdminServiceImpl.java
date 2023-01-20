@@ -2,6 +2,7 @@ package com.example.LibraryManagementApp.serviceimpl;
 
 import com.example.LibraryManagementApp.model.entity.Book;
 import com.example.LibraryManagementApp.model.entity.BookCategory;
+import com.example.LibraryManagementApp.model.entity.BookItem;
 import com.example.LibraryManagementApp.repository.BookCategoryRepository;
 import com.example.LibraryManagementApp.repository.BookItemRepository;
 import com.example.LibraryManagementApp.repository.BookRepository;
@@ -23,12 +24,12 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void addBooks(List<Book> bookList) {
+        bookList.forEach(book -> {
+            for(BookItem bookItem : book.getBookItemList()) {
+                bookItem.setBook(book);
+            }
+        });
         bookRepository.saveAll(bookList);
-//        bookList.forEach(book -> {
-//            book = bookRepository.save(book);
-////            bookItemRepository.saveAll(book.getBookItemList());
-//
-//        });
     }
 
     @Override

@@ -17,9 +17,9 @@ public class BookItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer itemId;
 
-//    @ManyToOne
-////    @JoinColumn(name="book_id", nullable = false)
-//    Book book;
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private Book book;
 
     @Column(unique = true)
     String barcode;
